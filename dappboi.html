@@ -1,0 +1,71 @@
+<html>
+<style>
+	.buttongreen {
+		background-color: white;
+		color: black;
+		font-size: 28px;
+		border: 2px solid #4CAF50;
+	}
+
+	.buttongreen:hover {
+		background-color: #4CAF50;
+		color: white;
+	}
+
+	.centered {
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	.body {
+		overflow: scroll;
+	}
+
+	.box {
+		inline-size: 950px;
+		overflow-wrap: break-word;
+		font-weight: 100;
+	}
+
+	.boxTitle {
+		inline-size: 950px;
+		overflow-wrap: break-word;
+		font-weight: bold;
+	}
+</style>
+
+<body onload="checkWalletEnable()">
+	<div>
+		<button class="buttongreen" onclick="enableWallet('nami')">Nami</button>
+		<button class="buttongreen" onclick="enableWallet('eternl')">Eternl</button>
+		<button class="buttongreen" onclick="enableWallet('flint')">Flint</button>
+
+		<p class="boxTitle">getBalance()</p>
+		<p class="box" id="walletBalance"></p>
+		<p class="boxTitle">getChangeAddress()</p>
+		<p class="box" id="changeAddress"></p>
+		<p class="boxTitle">getCollateral()</p>
+		<p class="box" id="collateral"></p>
+		<p class="boxTitle">getNetworkId()</p>
+		<p class="box" id="networkID"></p>
+		<p class="boxTitle">getRewardAddresses()</p>
+		<p class="box" id="rewardAddresses"></p>
+		<p class="boxTitle">getUnusedAddresses()</p>
+		<p class="box" id="unusedAddresses"></p>
+		<p class="boxTitle">getUsedAddresses()</p>
+		<p class="box" id="usedAddresses"></p>
+		<p class="boxTitle">getUtxos()</p>
+		<p class="box" id="utxos"></p>
+	</div>
+	<script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+
+	<script> var exports = {}; </script>
+	<script src="./out/cardanoWalletConnect.js"></script>
+
+	<script>if (window.module) module = window.module;</script>
+		
+	</script>
+</body>
+</html>
